@@ -6,7 +6,7 @@ interface PostProps {
   onDelete: () => void;
 }
 
-export default function PostInList(post: Post) {
+export default function PostInList({ post, onDelete }: PostProps) {
   return (
     <div>
       <div className="content">
@@ -14,7 +14,9 @@ export default function PostInList(post: Post) {
         <p>{post.thought}</p>
       </div>
       <div className="delete">
-        <button className="btn-delete">Trash Icon</button>
+        <button onClick={onDelete} className="btn-delete">
+          Trash Icon
+        </button>
       </div>
     </div>
   );
