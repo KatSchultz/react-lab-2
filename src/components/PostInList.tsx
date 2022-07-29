@@ -1,5 +1,6 @@
 import React from "react";
 import { Post } from "./SocialPosts";
+import "./PostInList.css";
 
 interface PostProps {
   post: Post;
@@ -8,9 +9,9 @@ interface PostProps {
 
 export default function PostInList({ post, onDelete }: PostProps) {
   return (
-    <div>
+    <div className="post-display">
       <div className="content">
-        <h1>{post.title}</h1>
+        <h2>{post.title}</h2>
         <p>{post.thought}</p>
       </div>
       <div className="delete">
