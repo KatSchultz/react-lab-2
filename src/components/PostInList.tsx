@@ -1,10 +1,11 @@
 import React from "react";
 import { Post } from "./SocialPosts";
 import "./PostInList.css";
+import { IconTrash } from "@tabler/icons";
 
 interface PostProps {
   post: Post;
-  onDelete: () => void;
+  onDelete: (id: string) => void;
 }
 
 export default function PostInList({ post, onDelete }: PostProps) {
@@ -15,9 +16,7 @@ export default function PostInList({ post, onDelete }: PostProps) {
         <p>{post.thought}</p>
       </div>
       <div className="delete">
-        <button onClick={onDelete} className="btn-delete">
-          Trash Icon
-        </button>
+        <IconTrash size={24} onClick={() => onDelete(post.id)} />
       </div>
     </div>
   );

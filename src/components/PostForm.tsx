@@ -2,6 +2,7 @@ import { nanoid } from "nanoid";
 import React, { ChangeEvent, useState } from "react";
 import "./PostForm.css";
 import { Post } from "./SocialPosts";
+import { IconX } from "@tabler/icons";
 
 interface FormProps {
   onSubmit: (post: Post) => void;
@@ -26,14 +27,12 @@ export default function PostForm({ onSubmit, onClose }: FormProps) {
     <div className="form-holder">
       <div className="second-div">
         <form action="">
-          <button onClick={onClose} className="btn-close-form">
-            X
-          </button>
+          <IconX onClick={onClose} className="btn-close-form" size={24} />
+
           <div className="form-inputs">
             <label htmlFor="title">Title</label>
             <input
               type="text"
-              placeholder="Title"
               name="title"
               value={newPost.title}
               onChange={handleChange}

@@ -22,10 +22,11 @@ export default function SocialPosts() {
     },
   ]);
 
-  function deletePost() {
-    // const postCopy = [...posts];
-    // let index = postCopy.findIndex((elem) => elem.thought === post.thought);
-    console.log("delete Post");
+  function deletePost(id: string) {
+    const postCopy = [...posts];
+    let index = postCopy.findIndex((elem) => elem.id === id);
+    postCopy.splice(index, 1);
+    setPosts(postCopy);
   }
 
   function submitForm(post: Post) {
