@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import React, { ChangeEvent, useState } from "react";
 import "./PostForm.css";
 import { Post } from "./SocialPosts";
@@ -8,7 +9,11 @@ interface FormProps {
 }
 
 export default function PostForm({ onSubmit, onClose }: FormProps) {
-  const [newPost, setNewPost] = useState<Post>({ title: "", thought: "" });
+  const [newPost, setNewPost] = useState<Post>({
+    id: nanoid(),
+    title: "",
+    thought: "",
+  });
 
   function handleChange(e: ChangeEvent<HTMLInputElement>) {
     setNewPost({ ...newPost, ...{ [e.target.name]: e.target.value } });
