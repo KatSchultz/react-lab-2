@@ -17,4 +17,8 @@ p {
   justify-content: center;
   align-items: flex-start;
   background-color: #f3f1f7;
+  font-size: 1.2em;
+}
+button {
+  font-size: 1.2em;
 }

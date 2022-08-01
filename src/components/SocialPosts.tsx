@@ -30,7 +30,7 @@ export default function SocialPosts() {
   }
 
   function submitForm(post: Post) {
-    setPosts([post, ...posts]);
+    setPosts((prev) => [post, ...prev]);
     console.log("Form submitted");
     closeForm();
   }
@@ -54,7 +54,7 @@ export default function SocialPosts() {
       </div>
       <div className="post-container">
         {posts.map((post, index) => (
-          <PostInList key={index} post={post} onDelete={deletePost} />
+          <PostInList key={post.id} post={post} onDelete={deletePost} />
         ))}
       </div>
     </div>
